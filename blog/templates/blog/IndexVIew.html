@@ -1,0 +1,6 @@
+<h1 align="center">Index page</h1>
+
+{% for article in article_list  %}
+<p align="center">{{article.title}}</p>
+<p align="center">{{article.content|truncatewords:30}} <a href="{% url 'blog:detail' article.id %}">Read more</a></p>
+{% endfor %}

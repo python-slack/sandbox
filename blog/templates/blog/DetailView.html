@@ -1,0 +1,9 @@
+<h1 align="center">{{article.title}}</h1>
+
+<p>{{article.content}}</p>
+
+<p align="right">Author: {{article.article_author}}</p>
+<p align="right">Publicated :{{article.publication_date}}</p>
+{% if article.publication_date != article.last_modification_date  %}
+    <p align="right">{{article.article_author}}</p>
+{% endif %}
