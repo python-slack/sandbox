@@ -23,3 +23,14 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+
+    article = models.ForeignKey(Article, null=True, on_delete=models.SET_NULL)
+    comment_author = models.ForeignKey(Author,null=True, on_delete=models.SET_NULL)
+    content = models.CharField(max_length=300)
+    publication_date = models.DateTimeField(auto_now_add=True)
+    last_modification_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "Comment to " + self.article.title + " by " + self.comment_author.name

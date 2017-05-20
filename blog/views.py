@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Author, Article
+from .models import *
 
 class IndexView(generic.ListView):
 

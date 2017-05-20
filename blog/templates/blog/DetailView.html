@@ -3,7 +3,17 @@
 <p>{{article.content}}</p>
 
 <p align="right">Author: {{article.article_author}}</p>
-<p align="right">Publicated :{{article.publication_date}}</p>
+<p align="right">Publicated: {{article.publication_date}}</p>
 {% if article.publication_date != article.last_modification_date  %}
     <p align="right">{{article.article_author}}</p>
 {% endif %}
+
+
+<p></p>
+<p></p>
+<p></p>
+{% for comment in article.comment_set.all %}
+<p align="center">{{comment.content}}</p>
+<p align="right">{{comment.comment_author}}</p>
+<p align="right">{{comment.publication_date}}</p>
+{% endfor %}
